@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的游戏百宝箱</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+
+        /* 导航栏样式 */
+        nav {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* 轮播图样式 */
+        .slider {
+            width: 100%;
+            height: 400px;
+            background-color: #f0f0f0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slider img.active {
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 10px;
+            margin: 2rem 0;
+            padding: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+        }
+
+        .game-cover {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .game-cover:hover {
+            transform: scale(1.05);
+        }
+
+        .game-info h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .game-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1rem 0;
+        }
+
+        .tag {
+            background: #e0e0e0;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+
+        .rating {
+            color: #f39c12;
+            font-size: 1.2em;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .screenshot {
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .screenshot:hover {
+            transform: translateY(-5px);
+        }
+
+        .buy-button {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .buy-button:hover {
+            background: #2980b9;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav>
+        <h1><b>七创AI人工智能HTML网页课</b></h1>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">关于我们</a></li>
+            <li><a href="#">服务</a></li>
+            <li><a href="#">联系我们</a></li>
+        </ul>
+    </nav>
+    
+
+    <header>
+        <h1><b><i>我的游戏</i></b></h1>
+        <p>探索我最爱的游戏收藏</p>
+    </header>
+    
+    
+    <div class="slider">
+        <img src="game1.jpg" alt="我的最爱1" class="active">
+        <img src="game2.jpg" alt="我的最爱2">
+        <img src="game3.jpg" alt="我的最爱3">
+    </div>
+
+    
+    <div class="container">
+        <!-- 游戏1 -->
+        <div class="game-card">
+            <img src="我的世界游戏图片.jpg" alt="游戏封面" class="game-cover">
+            
+            <div class="game-info">
+                <h2><b>我的世界（Minecraft）</b></h2>
+                <div class="game-tags">
+                    <span class="tag">动作冒险</span>
+                    <span class="tag">开放世界</span>
+                    <span class="tag">沙盒类第三人称电子游戏</span>
+                </div>
+                <div class="rating">★★★★☆</div>
+                <p>发行时间：2009年</p>
+                <p>平台：PC/PS5/Xbox Series X
+                    注：中国现由网易代理</p>
+                <p>游戏介绍：《我的世界》是一款沙盒游戏，其核心特色是玩家在一个由方块构成的开放世界中拥有高度自由度。
+                    玩家可以自由探索、收集资源、建造建筑。游戏分为生存模式、创造模式和冒险模式，分别提供资源收集与对
+                    抗怪物的挑战、无限资源与飞行能力以专注建造创造以及体验他人设计的地图等内容。游戏内有丰富的生态系
+                    统和多样的生物，包括可提供资源的动物和具有攻击性的怪物等。其独特的方块构建视觉风格和简约操作降低
+                    了上手难度，使各年龄段玩家都能轻松加入。</p>
+                
+                <h3>游戏特色</h3>
+                <ul>
+                    <li><b>高度自由的沙盒玩法</b>：玩家在一个由方块构成的开放世界中，可自由探索、收集资源、建造建筑，无固定剧情或任务，能随心所欲发挥创造力</li>
+                    <li><b>独特的方块构建风格</b>：整个游戏世界由方块组成，所有物品和生物都呈现像素方块风格，这种简约而独特的视觉效果，使游戏极具辨识度，也为玩家的创造提供了便利和趣味性。</li>
+                    <li><b>丰富的游戏模式</b>：包含生存模式、创造模式和冒险模式。生存模式需收集资源、对抗怪物；创造模式可无限获取资源并飞翔，专注建造；冒险模式可体验他人设计的地图和剧情。</li>
+                </ul>
+
+                <h3>游戏截图</h3>
+                <div class="screenshots">
+                    <img src="1.jpg" class="screenshot" alt="截图1">
+                    <img src="2.jpg" class="screenshot" alt="截图2">
+                    <img src="3.jpg" class="screenshot" alt="截图3">
+                </div>    
+                
+                <h3>视频介绍</h3>
+                <div class="video-container">
+                    <!-- 嵌入视频代码 -->
+                    <iframe width="90%" height="666" src="https://www.bilibili.com/video/BV1LG4y1q7PS/?spm_id_from=333.337.search-card.all.click&vd_source=0902b183a8a3402b6ad50bf46cfd750a" frameborder="0" allowfullscreen></iframe>
+                </div>
+                
+                <div>
+                <button class="buy-button"><a href="https://www.minecraft.net/zh-hans">进入游戏网页</a></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 游戏2 -->
+        <div class="game-card">
+            <img src="无畏契约.jpg" alt="游戏封面" class="game-cover">
+            <div class="game-info">
+                <h2><b>无畏契约（VALORANT）</b></h2>
+                <div class="game-tags">
+                    <span class="tag">团队策略</span>
+                    <span class="tag">多人合作</span>
+                    <span class="tag">刺激第一人称射击</span>
+                </div>
+                <div class="rating">★★★★★</div>
+                <p>发行时间：2020年</p>
+                <p>平台：PC/moblie</p>
+                <p><b>游戏介绍</b>：《无畏契约》（Valorant）是一款由拳头游戏（Riot Games）开发的多人在线第一人称射击游戏，
+                    融合了竞技射击与英雄技能元素。玩家可选择不同能力的英雄组队，进行策略对抗。游戏以精准射击为核心，
+                    英雄技能丰富战术选择，地图设计多样且具策略性。其公平竞技环境、低配置需求与独特画面风格，使其在
+                    全球广受欢迎，适合喜欢团队合作与战术较量的玩家。
+                </p>
+                
+                <h3><b>推荐理由</b></h3>
+                <ul>
+                    <ol><li>
+                        上手门槛低：作为一款全民向的射击游戏，其“粗”上手门槛低，普通玩家也能轻松享受游戏乐趣。且初级学习成本不高，只要多玩，玩家的枪法和意识都能不断提升。
+                    </li>
+                    <li>
+                        配置要求低：主流的普通配置电脑即可60fps稳定畅玩，不怎么吃配置，能让更多玩家流畅游戏。
+                    </li>
+                    <li>
+                        游戏内容纯粹：除了皮肤以外，附加内容不多，没有乱七八糟的签到、月卡等，让玩家能更专注于游戏本身。
+                    </li>
+                    <li>
+                        画面风格独特：采用卡通渲染风格，色彩鲜艳、饱和度高，画面细节出色，具有吸引力，且不会让晕3D的玩家感到不适。
+                    </li>
+                    <li>
+                        技能与战术融合：不同角色的特殊技能增强了战斗的战术性，组队游戏时的策略性更强，使游戏既保留了射击游戏的核心体验，又增添了MOBA类游戏的策略元素。
+                    </li>
+                </ol>
+                </ul>
+
+                <h3>视频介绍</h3>
+                <div class="video-container">
+                    <!-- 嵌入视频代码 -->
+                    <iframe width="90%" height="666" src="https://v.qq.com/x/page/e3526whq14c.html?ptag=bing.com" frameborder="0" allowfullscreen></iframe>
+                </div>
+
+                <h3>网址链接</h3>
+                <div>
+                    <button id="demoButton"><a href="https://val.qq.com/act/a20230801download/index.html?adtag=1139">无畏契约官网（请点击我）</a></button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 游戏收藏家余光中（小余老师） | 联系邮箱：2403408196@qq.com</p>
+
+        <!-- 页脚 -->
+        <p>版权所有 &copy; <a href="https://qichuang.91xbc.com/homepage">2025 七创AI人工智能小余老师</p></a>
+    
+        <div class="social-links">
+            <a href="#" style="color: rgb(0, 247, 33); margin: 0 10px;">Steam</a>
+            <a href="#" style="color: rgb(254, 254, 0); margin: 0 10px;">PSN</a>
+            <a href="#" style="color: rgb(4, 159, 249); margin: 0 10px;">Xbox Live</a>
+        </div>
+    </footer>
+</body>
+</html>
